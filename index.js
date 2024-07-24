@@ -3,11 +3,11 @@ const { getSwapMarket, getTokenAsset } = require("./utils");
 const { swapTokenRapid } = require("./swap");
 
 let executionCount = 0;
-const targetToken = "2hdsVWL83gUXQs28fXsSNXd5BmwvvVdtxvrLajutpump";
+const targetToken = "9ex7onJ7i3aizoqVqR1QsMrY4BjZdRQQT19FZzYnpump";
 
 const bettingBalance = 0.025 // solana token unit
-const basePrice = 0.0008469      // solana token unit
-const gettingRate = 0.2      // 20%
+let basePrice = 0.0006713      // solana token unit
+const gettingRate = 0.25     // 20%
 const losingRate = 0.1       // 10%
 
 let burnt_token_price_list = {}
@@ -35,7 +35,7 @@ const runFunction = async () => {
         tokenPrice < basePrice * (1 - losingRate)
       ){
 
-        await swapTokenRapid(targetToken, swapMarket.poolKeys, bettingBalance, true);
+        // await swapTokenRapid(targetToken, swapMarket.poolKeys, bettingBalance, true);
         burnt_token_price_list[tokenAsset.result.id] = tokenPrice
 
         delete burnt_token_price_list[tokenAsset.result.id]
@@ -47,7 +47,7 @@ const runFunction = async () => {
         console.log("isFrozon:", isFrozon, ", isBurnt:", isBurnt, ", token price", tokenPrice);
 
         if(tokenPrice <= basePrice){
-          await swapTokenRapid(targetToken, swapMarket.poolKeys, bettingBalance, false);
+          // await swapTokenRapid(targetToken, swapMarket.poolKeys, bettingBalance, false);
           burnt_token_price_list[tokenAsset.result.id] = tokenPrice
           basePrice=tokenPrice
         }  
