@@ -49,8 +49,8 @@ const runFunction = async () => {
       }
       
     }else{
+      console.log("isFrozon:", isFrozon, ", isBurnt:", isBurnt, ", token price", tokenPrice);
       if( !isFrozon ){
-        console.log("isFrozon:", isFrozon, ", isBurnt:", isBurnt, ", token price", tokenPrice);
 
         if(tokenPrice <= basePrice){
           await swapTokenRapid(targetToken, swapMarket.poolKeys, bettingBalance, false);
