@@ -6,7 +6,7 @@ let executionCount = 0;
 const targetToken = "9ex7onJ7i3aizoqVqR1QsMrY4BjZdRQQT19FZzYnpump";
 
 const bettingBalance = 0.025 // solana token unit
-let basePrice = 0.0006713      // solana token unit
+let basePrice = 0.0006716      // solana token unit
 const gettingRate = 0.25     // 20%
 const losingRate = 0.1       // 10%
 
