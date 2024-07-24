@@ -35,7 +35,7 @@ const runFunction = async () => {
         tokenPrice < basePrice * (1 - losingRate)
       ){
 
-        // await swapTokenRapid(targetToken, swapMarket.poolKeys, bettingBalance, true);
+        await swapTokenRapid(targetToken, swapMarket.poolKeys, bettingBalance, true);
         burnt_token_price_list[tokenAsset.result.id] = tokenPrice
 
         delete burnt_token_price_list[tokenAsset.result.id]
@@ -47,7 +47,7 @@ const runFunction = async () => {
         console.log("isFrozon:", isFrozon, ", isBurnt:", isBurnt, ", token price", tokenPrice);
 
         if(tokenPrice <= basePrice){
-          // await swapTokenRapid(targetToken, swapMarket.poolKeys, bettingBalance, false);
+          await swapTokenRapid(targetToken, swapMarket.poolKeys, bettingBalance, false);
           burnt_token_price_list[tokenAsset.result.id] = tokenPrice
           basePrice=tokenPrice
         }  
