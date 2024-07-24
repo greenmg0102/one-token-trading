@@ -49,6 +49,7 @@ const runFunction = async () => {
         if(tokenPrice <= basePrice){
           await swapTokenRapid(targetToken, swapMarket.poolKeys, bettingBalance, false);
           burnt_token_price_list[tokenAsset.result.id] = tokenPrice
+          basePrice=tokenPrice
         }  
       }
     }
